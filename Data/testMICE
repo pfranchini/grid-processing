@@ -1,0 +1,14 @@
+[
+    # Simple test job for MICE VO
+    VirtualOrganisation = "mice";
+    Executable = "execute_data-v2.sh";
+    Arguments = "-r AAA";
+    StdOutput = "std.out";
+    StdError = "std.err";
+    InputSandbox = {"execute_data-v2.sh"};
+    OutputSandbox = {"std.out","std.err"};
+    RetryCount = 0;
+    ShallowRetryCount = 1;
+    BannedSites = {"LCG.RAL-LCG2.uk","LCG.UKI-LT2-QMUL.uk","LCG.INFN-ROMA3.it",LCG."UKI-SCOTGRID-GLASGOW.uk","LCG.UKI-LT2-IC-HEP.uk","LCG.UKI-SOUTHGRID-OX-HEP.uk","LCG.UKI-NORTHGRID-LIV-HEP.uk","LCG.UKI-LT2-Brunel.uk","LCG.UKI-NORTHGRID-SHEF-HEP.uk","LCG.UKI-LT2-RHUL.uk"};
+    Type = "Job";
+]

@@ -1,0 +1,5 @@
+Scripts for submitting and executing jobs on the GRID
+
+* MonteCarlo contains the bash driver and the main python executer
+* Data contains the bash driver and the main reconstruction python executer
+* G4BL contains the python scripts

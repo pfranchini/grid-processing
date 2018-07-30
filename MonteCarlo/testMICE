@@ -1,0 +1,26 @@
+[
+    # Simple test job for MICE VO
+    VirtualOrganisation = "mice";
+    Executable = "execute_against_MC.sh";
+    Arguments = "AAA";
+    StdOutput = "std.out";
+    StdError = "std.err";
+    InputSandbox = {"execute_against_MC.sh","execute_MC.py"};
+    OutputSandbox = {
+        "std.out",
+        "std.err"
+    };
+    RetryCount = 0;
+    ShallowRetryCount = 1;
+    #BannedSites = {"LCG.UKI-SOUTHGRID-RALPP.uk","LCG.RAL-LCG2.uk","INFN-ROMA3"}; 
+    BannedSites = {"LCG.RAL-LCG2.uk","LCG.INFN-ROMA3.it"};
+    #BannedSites = {"LCG.RAL-LCG2.uk","LCG.UKI-SOUTHGRID-RALPP.uk","LCG.UKI-LT2-QMUL.uk","LCG.INFN-ROMA3.it"};
+    #JobType = "normal";
+    #Rank = -other.GlueCEStateEstimatedResponseTime;
+
+    # You should put > 480 (i.e. 8hrs) for a real job:
+    Requirements = (other.GlueCEPolicyMaxWallClockTime > 479);
+    #Requirements = ( Member("VO-mice-g4beamline-1.08", other.GlueHostApplicationSoftwareRunTimeEnvironment) )
+    #Requirements = ( (other.GlueHostArchitecturePlatformType=="i686") && (other.GlueHostMainMemoryRAMSize > 2047) );
+    Type = "Job";
+]
